@@ -1,0 +1,12 @@
+repo='path to opencart repository'
+dest='destination where tags will be cloned to
+db_user='DB username'
+db_pass='database password'
+
+# this will be prefixed in the name of all database created
+# example: if prefix is demo_opencart. the datbase names willbe 
+#demo_opencart_1.5.1,  demo_opencart_1.5.5, demo_opencart_2.3.1 etc...
+db_name_prefix='demo_opencart'
+
+
+
