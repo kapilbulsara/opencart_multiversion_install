@@ -9,7 +9,7 @@
 - not working 
 all 1.x 
 -  2.2.0.0_a1 - b1 
-
+- 3.0.3.0 - 3.1.0.0 - composer issues
  */
 //   php cli_install.php install --db_hostname localhost \
 //                               --db_username root \
@@ -63,6 +63,10 @@ foreach( $tags as  $line){
 		array_splice($options, 0,1);
 
 		exec("cd $tag/upload/install/ && php cli_install.php install " . implode(" ", $options) );
+		if(substr($tag, 0,1) == '3'){
+				exec("rm -rf $tag/upload/system/storage/vendor/*");
+				exec("cd $tag && composer -n update");
+		}
 	//	print_r($options);
 
 }
