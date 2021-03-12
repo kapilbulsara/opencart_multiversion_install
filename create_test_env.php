@@ -1,33 +1,24 @@
 <?php 
-/* @TODO works working
-- working
-2.0.0.0,2.0.0.0b1 - 2.1.0.2,  3.0.0.0 -  3.0.2.0
-- 2.2.0.0 - working with some php errors in template - seems like an opencart issue 
-
-
-
-- not working 
-all 1.x 
--  2.2.0.0_a1 - b1 
-- 3.0.3.0 - 3.1.0.0 - composer issues
+/* @TODO 
+- 3.0.3.7 - 3.1.0.0 
  */
-//   php cli_install.php install --db_hostname localhost \
-//                               --db_username root \
-//                               --db_password pass \
-//                               --db_prefix demo_opencart \
-//                               --db_driver mysqli \
-//								 --db_port 3306 \
-//                               --username admin \
-//                               --password admin \
-//                               --email youremail@example.com \
-//                               --http_server http://localhost/opencart/
+/*
 
+php create_test_env.php  --db_hostname localhost \  
+                         --db_username demo \
+						 --db_password pass \
+						 --db_prefix demo_opencart_  \
+						 --username admin \
+						 --password admin \
+						 --email yourmail@example.com \
+						 --http_server http://localhost/opencart/
+
+ */
 // php create_test_env.php  --db_hostname localhost  --db_username demo --db_password demo --db_prefix demo_opencart_  --username admin --password admin --email yourmail@example.com --http_server http://demo.localhost/opencart/
 
-//print_r($options);
 // BEGIN clone repos
 $repoName = 'opencart_master';
-//exec("git clone https://github.com/opencart/opencart.git $repoName");
+exec("git clone https://github.com/opencart/opencart.git $repoName");
 exec("git ls-remote --tags $repoName", $tags);
 
 foreach( $tags as  $line){
