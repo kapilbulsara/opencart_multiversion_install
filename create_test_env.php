@@ -58,30 +58,7 @@ foreach( $tags as  $line){
 				exec("rm -rf $tag/upload/system/storage/vendor/*");
 				exec("cd $tag && composer -n update");
 		}
-	//	print_r($options);
 
-}
-
-
-function getOptions($args){
-
-		$options = array();
-		for($i = 1; $i < count($args); ){
-
-				$options[$args[$i]] = $args[$i + 1];
-				$i += 2; 
-		}
-		return $options; 
-
-}
-
-function getAlternativeOptions($options){
-
-		$alternate = array(); 
-		foreach($options as $key =>  $value){
-				$alternate[$alternateOptions[$key]] = $value; 
-		}
-		return $alternate;
 }
 
 function createDB($servername = 'localhost', $username, $password, $dbName){
